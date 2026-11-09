@@ -10,6 +10,17 @@ public class GUI {
     public static Visualization visualization = new Visualization();
 
     public static void main(String[] args) {
+
+        // set up a new BVH
+
+        BoundedVolumeHierarchy bvh = new BoundedVolumeHierarchy();
+        bvh.buildBVH(new java.util.ArrayList<>(java.util.List.of(
+                new Triangle(new Point(0, 100), new Point(80, 20), new Point(80, 100)), 
+                new Triangle(new Point(-120, -60), new Point(-40, -90), new Point(-70, -20)),
+                new Triangle(new Point(60, -150), new Point(150, -120), new Point(110, -60)))));
+        visualization.setBoundingVolumeHierarchy(bvh);
+
+
         JFrame frame = new JFrame("BVH Visualization");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(400, 400);

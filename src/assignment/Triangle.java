@@ -2,7 +2,6 @@ package assignment;
 
 import java.awt.Point;
 import java.awt.geom.Point2D;
-import java.util.Objects;
 
 public class Triangle implements Shape {
     public Point a, b, c;
